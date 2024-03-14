@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+//Im not sure if this should be added below stage () or if stage () should be intigrated within.
+task stage () {
+    dependsOn ':GroceryStoreSystem-Backend:assemble'
+}
+
+group = 'ca.mcgill.ecse321'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17.0'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test'){
+	//if issues, comment this line out:
+	exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.mockito:mockito-core:4.3.1'
+	testImplementation 'org.mockito:mockito-junit-jupiter:4.3.1'
+	
+	//testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

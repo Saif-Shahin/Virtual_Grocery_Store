@@ -1,3 +1,4 @@
+# NOTE: Contact me to view the backend file. I cannot share it publicly. 
 # project-group-group-01
 Grocery Store Application
 

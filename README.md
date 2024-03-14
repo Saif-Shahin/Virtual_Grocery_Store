@@ -1,4 +1,4 @@
-# NOTE: Contact me to view the backend file. I cannot share it publicly. 
+# NOTE: I cannot share the backend files publicly. Contact me if you are intrested to chat about them. 
 # project-group-group-01
 Grocery Store Application
 
